@@ -2,23 +2,36 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'                                         
 import './App.css'
+import toDo from './ToDo';
+import ToDo from './ToDo';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      
-      <h1>Vite + React</h1>
+      <ToDo task="done" ></ToDo> 
+
+      {/* <h1>Vite + React</h1>
+      <Cricketer name='Steve Smith' run='101111'></Cricketer>
      <Person className = 'shohan' ></Person>
-     <Developer></Developer>
-     <Developer2></Developer2>
-     <Developer3></Developer3>
+     <Developer name ='pal'></Developer>
+     <Developer2 name= 'rakhi'></Developer2>
+     <Developer3 name='rakhal'></Developer3>
      <Pookie></Pookie>
      <Babe></Babe>
-     <New></New>   
+     <New></New>    */}
 
     </>
+  )
+}
+
+function Cricketer ({name, run}){
+  return(
+    <div>
+    <p>Name:{name} </p>
+    <p>Ability:{run}</p>
+    </div> 
   )
 }
 
@@ -30,23 +43,24 @@ function Person (){
   )
 }
 
-function Developer (){
+function Developer (props){
+ console.log(props)
   return(
     <div>
-      <p>hey, everyone , i am shohan. </p>
+      <p>hey, everyone , i am {props.name}. </p>
     </div>
   )
 }
 
-function Developer2 (){
+function Developer2 (props){
   return(
-    <h4>Hey everyone i am who i am </h4>
+    <h4>Hey everyone i am who i am {props.name} </h4>
   )
 }
-function Developer3 () { 
+function Developer3 (props) { 
   return(
-  <h3> Hey ,im sazal , i am a react Developer,   
-    if you have any problem regarding your website i am here to help......
+  <h3> Hey  , i am a react Developer, named {props.name }    
+      if you have any problem regarding your website i am here to help......
   </h3>
 
   )               
